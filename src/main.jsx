@@ -1,29 +1,20 @@
 import { StrictMode } from 'react'
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { createRoot } from 'react-dom/client'
 import './index.css'
-
-
-export function HomeSection() {
-  return (
-    <>
-      <h1>Hello World</h1>
-    </>
-  )
-}
+import Home from './pages/Home'
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomeSection />,
+    element: <Home />,
   },
 
 ])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ThemeProvider>
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <RouterProvider router={router} />
   </StrictMode>
 )
